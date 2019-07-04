@@ -6,12 +6,14 @@ order: 2
 
 <a href="#" class="image featured"><img src="assets/images/pic08.jpg" alt="" /></a>
 <script type="text/javascript">
-	var date = new Date();
+	window.onload = function(){
+		var date = new Date();
+		/* Depends on what year and if I've had my birthday */
+		var age = date.getFullYear()-1996 - ((date.getMonth() == 12 && date.getDate() >= 30) ? 0 : 1);
+        var p = document.getElementById("about-me")
 
-	/* Depends on what year and if I've had my birthday */
-	var age = date.getFullYear()-1996 - (date.getMonth() == 12 && date.getDate() >= 30) ? 0 : 1;
-
-	document.getElementById('about-me').innerHTML = str.replace('!', age); 
+		p.innerHTML = p.innerHTML.replace('22', age); 
+	}
 </script>
 
-<p id="about-me">Hi there! My name is Philip Ekholm. I'm ! years old.</p>
+<p id="about-me">Hi there! My name is Philip Ekholm. I'm 22 years old and live in <a href="https://www.google.com/maps/place/Svedala,+Sweden/@55.5049955,13.1002598,11z/data=!4m5!3m4!1s0x46539c5f2e2470d7:0x4019078290e7980!8m2!3d55.5089084!4d13.2371097">Svedala</a>, Sweden.</p>
