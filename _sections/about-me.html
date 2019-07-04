@@ -1,9 +1,17 @@
 ---
 title: About Me
 icon: fa-user
-order: 3
+order: 2
 ---
 
 <a href="#" class="image featured"><img src="assets/images/pic08.jpg" alt="" /></a>
+<script type="text/javascript">
+	var date = new Date();
 
-<p>Hi there! My name is Philip Ekholm.</p>
+	/* Depends on what year and if I've had my birthday */
+	var age = date.getFullYear()-1996 - (date.getMonth() == 12 && date.getDate() >= 30) ? 0 : 1;
+
+	document.getElementById('about-me').innerHTML = str.replace('!', age); 
+</script>
+
+<p id="about-me">Hi there! My name is Philip Ekholm. I'm ! years old.</p>
