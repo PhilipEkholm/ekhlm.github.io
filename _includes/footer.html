@@ -1,10 +1,18 @@
+<script type="text/javascript">
+	window.onload = function(){
+		var date = new Date();
+        var p = document.getElementByClassName("copyright")
+
+		p.innerHTML = p.innerHTML.replace('2018', date.getFullYear());
+	}
+</script>
 <!-- Footer -->
 <div id="footer">
   
   <!-- Copyright -->
   <ul class="copyright">
     {% if site.title or site.author %}
-      <li>&copy; {{- site.title | default: site.author -}}. All rights reserved.</li>
+      <li>&copy; {{- site.title | default: site.author -}} 2018. All rights reserved.</li>
     {% endif %}
   </ul>
   
