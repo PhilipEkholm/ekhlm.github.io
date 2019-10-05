@@ -44,6 +44,17 @@
 		// Scrolly links.
 			$('.scrolly').scrolly();
 
+		//Update copyright year
+		var copyrightText = $('.copyright > li').text();
+		$('.copyright > li').text(copyrightText.replace('2018', new Date().getFullYear()));
+
+		//And my age depending on year
+		var aboutMeText = $('#about-me-paragraph').html();
+		var date = new Date();
+		/* Depends on what year and if I've had my birthday */
+		var age = date.getFullYear()-1996 - ((date.getMonth() == 12 && date.getDate() >= 30) ? 0 : 1);
+		$('#about-me-paragraph').html(aboutMeText.replace('21', age))
+
 		// Nav.
 			var $nav_a = $('#nav a.scrolly');
 
